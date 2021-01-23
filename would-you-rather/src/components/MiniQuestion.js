@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { timestampToText } from '../utils/helpers';
 
@@ -12,6 +12,7 @@ class MiniQuestion extends Component {
                     <div className="avatar">
                         <img
                             src={author.avatarURL}
+                            alt="avatar"
                             className="avatar-image"
                         />
                     </div>

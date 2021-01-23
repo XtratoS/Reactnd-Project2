@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'
 import Home from './Home';
@@ -12,23 +12,31 @@ export class App extends Component {
     }
 
     render() {
+        const { loaded, loggedInUser } = this.props
         return (
             <Router>
                 <LoadingBar style={{position: "fixed", zIndex: 5}} />
                 <NavBar />
-                {this.props.loaded &&
-                    <div className="container">
-                        <Home />
-                    </div>
-                }
+                {loaded && (
+                    (loggedInUser && (
+                        <div className="container">
+                            <Home />
+                        </div>))
+                    || (
+                        <div>
+                            LOGIN
+                        </div>
+                    )
+                )}
             </Router>
         )
     }
 }
 
-function mapStateToProps({initialized}) {
+function mapStateToProps({initialized, loggedInUser}) {
     return {
-        loaded: initialized
+        loaded: initialized,
+        loggedInUser
     }
 }
 

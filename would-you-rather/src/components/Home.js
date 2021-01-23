@@ -14,14 +14,6 @@ export class Home extends Component {
     }
 
     render() {
-        const {answered, unanswered} = this.props;
-
-        let questions = {}
-        if (this.state.visibleSection === 'answered') {
-            questions = answered
-        } else {
-            questions = unanswered
-        }
 
         const selected = this.state.visibleSection;
         const selectedStyle = 'btn-primary';
@@ -57,15 +49,12 @@ function mapStateToProps({loggedInUser, questions}) {
     for (let questionId in questions) {
         let question = questions[questionId];
 
-        console.log([...question.optionOne.votes, ...question.optionTwo.votes].includes(loggedInUser));
         if ( ([...question.optionOne.votes, ...question.optionTwo.votes].includes(loggedInUser)) === false ) {
             answered.push(questionId);
         } else {
             unanswered.push(questionId);
         }
     }
-
-    console.log(answered, unanswered)
 
     return {
         answered,
