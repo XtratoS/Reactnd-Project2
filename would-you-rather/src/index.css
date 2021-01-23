@@ -8,3 +8,58 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.questions-container {
+    max-width: 480px;
+    margin: auto;
+
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+.question {
+    margin: .25rem;
+    padding: .25rem;
+
+    border: 1px solid #6c757d;
+    border-radius: .25rem;
+}
+
+.question-extradata, .hint {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    gap: .25rem;
+}
+
+.author, .date {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date {
+    color: #6c757d;
+    font-size: .7rem;
+}
+
+.title-container {
+
+}
+
+.hint {
+    width: 160px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.avatar-image {
+    width:100%;
+    max-width:36px;
+}
