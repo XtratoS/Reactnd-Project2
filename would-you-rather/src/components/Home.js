@@ -27,6 +27,7 @@ export class Home extends Component {
         const selected = this.state.visibleSection;
         const selectedStyle = 'btn-teal';
         const notSelectedStyle = 'btn-outline-teal';
+        const visibleQuestions = this.props[this.state.visibleSection];
         return (
             <div className="text-center my-4 small-container">
                 <div className="m-1 p-1">
@@ -46,14 +47,16 @@ export class Home extends Component {
                 <div
                     className={`fade ${this.state.show}`}
                 >
-                    {this.props[this.state.visibleSection].map((id) => {
+                    {visibleQuestions.length > 0 && visibleQuestions.map((id) => {
                         return (
                             <MiniQuestion
                                 key={id}
                                 id={id}
                             />
                         )
-                    })}
+                    }) ||
+                    <div className="mt-2 mb-4">No questions to show...</div>
+                    }
                 </div>
             </div>
         )
@@ -68,9 +71,9 @@ function mapStateToProps({loggedInUser, questions}) {
         let question = questions[questionId];
 
         if ( ([...question.optionOne.votes, ...question.optionTwo.votes].includes(loggedInUser)) === false ) {
-            answered.push(questionId);
-        } else {
             unanswered.push(questionId);
+        } else {
+            answered.push(questionId);
         }
     }
 
