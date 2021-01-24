@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import QuesionsList from './QuestionsList';
+import MiniQuestion from './MiniQuestion';
 
 export class Home extends Component {
     state = {
+        show: 'show',
         visibleSection: 'unanswered'
     }
 
     switchSection(section) {
-        if (section !== this.state.section) {
-            this.setState({visibleSection: section});
+        if (section !== this.state.visibleSection) {
+            this.setState({show: ''}, () => {
+                setTimeout(() => {
+                    this.setState({visibleSection: section}, () => {
+                        setTimeout(() => {
+                            this.setState({show: 'show'});
+                        }, 150);
+                    });
+                }, 150);
+            });
         }
     }
 
     render() {
 
         const selected = this.state.visibleSection;
-        const selectedStyle = 'btn-primary';
-        const notSelectedStyle = 'btn-outline-primary'
+        const selectedStyle = 'btn-teal';
+        const notSelectedStyle = 'btn-outline-teal';
         return (
-            <div className="text-center my-4 questions-container">
+            <div className="text-center my-4 small-container">
                 <div className="m-1 p-1">
                     <button
                         className={`m-1 btn ${selected === 'unanswered' ? selectedStyle : notSelectedStyle}`}
@@ -34,9 +43,18 @@ export class Home extends Component {
                         Answered
                     </button>
                 </div>
-                <QuesionsList
-                    questions={this.props[this.state.visibleSection]}
-                />
+                <div
+                    className={`fade ${this.state.show}`}
+                >
+                    {this.props[this.state.visibleSection].map((id) => {
+                        return (
+                            <MiniQuestion
+                                key={id}
+                                id={id}
+                            />
+                        )
+                    })}
+                </div>
             </div>
         )
     }

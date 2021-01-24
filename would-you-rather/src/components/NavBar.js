@@ -1,48 +1,55 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logout } from '../actions/loggedInUser';
 
 export class NavBar extends Component {
     render() {
         return (
-            // <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            //         <ul className="navbar-nav">
-            //             <li className="nav-item">
-            //             <a className="nav-link active" aria-current="page" href="#">Home</a>
-            //             </li>
-            //             <li className="nav-item">
-            //             <a className="nav-link" href="#">Features</a>
-            //             </li>
-            //             <li className="nav-item">
-            //             <a className="nav-link" href="#">Pricing</a>
-            //             </li>
-            //             <li className="nav-item dropdown">
-            //             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            //                 Dropdown link
-            //             </a>
-            //             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            //                 <li><a className="dropdown-item" href="#">Action</a></li>
-            //                 <li><a className="dropdown-item" href="#">Another action</a></li>
-            //                 <li><a className="dropdown-item" href="#">Something else here</a></li>
-            //             </ul>
-            //             </li>
-            //         </ul>
-            // </nav>
-            <nav className="navbar navbar-expand navbar-dark bg-primary">
-                <ul className="navbar-nav ms-2">
-                    <li className="nav-item">
-                        <NavLink className="nav-link" exact to="/" activeClassName="active">
-                            Home
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" exact to="/new" activeClassName="active">
-                            Not Home
-                        </NavLink>
-                    </li>
-                </ul>
+            <nav className="navbar-light side-nav bg-dark text-danger">
+                <NavLink className="nav-link p-0" exact to="/" activeClassName="active">
+                    <div className="side-nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
+                        <i className="fa fa-home fa-2x"></i>
+                    </div>
+                </NavLink>
+                <NavLink className="nav-link p-0" exact to="/new" activeClassName="active">
+                    <div
+                        className="side-nav-item"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Add New Question"
+                    >
+                        <i className="fa fa-plus-square fa-2x"></i>
+                    </div>
+                </NavLink>
+                <NavLink className="nav-link p-0" exact to="/leaderboard" activeClassName="active">
+                    <div className="side-nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Leaderboard">
+                        <i className="fa fa-trophy fa-2x"></i>
+                    </div>
+                </NavLink>
+                {(this.props.loggedIn === true) &&
+                    (<div className="nav-link p-0 logout-btn"
+                        onClick={(e) => {this.props.dispatch(logout())}}
+                    >
+                        <div
+                            className="side-nav-item text-danger"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Log Out"
+                        >
+                            <i className="fa fa-sign-out-alt fa-2x"></i>
+                        </div>
+                    </div>)
+                }
             </nav>
         )
     }
 }
 
-export default NavBar
+function mapStateToProps(state) {
+    return {
+        loggedIn: state.loggedInUser === null ? false : true
+    }
+}
+
+export default connect(mapStateToProps)(NavBar)

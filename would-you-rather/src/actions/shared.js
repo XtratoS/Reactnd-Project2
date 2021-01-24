@@ -14,7 +14,7 @@ export function handleInitialData () {
             dispatch(receiveUsers(users));
             dispatch(receiveQuestions(questions));
             dispatch(setInitialized(true));
-            dispatch(login('tylermcginnis'));
+            // dispatch(login('tylermcginnis'));
             dispatch(hideLoading());
         });
     }

@@ -7,7 +7,7 @@ class MiniQuestion extends Component {
         const { question, author } = this.props;
         return (
             <div className="question row m-2">
-                <div className="col-4 m-auto">
+                <div className="col-4 m-auto question-extradata">
                     <div className="author">{author.name}</div>
                     <div className="avatar">
                         <img
