@@ -20,3 +20,13 @@ export function timestampToText(timestamp) {
     
     return (`${day} at ${hrs}:${minutes} ${dayPart}`);
 }
+
+export function formatUser(user) {
+    const id = user.name.toLowerCase().replace(/\s+/g, '');
+    const name = user.name;
+    const avatarURL = user.avatarURL;
+    const answers = {};
+    const questions = [];
+    const newUser = {[id]: {id, name, avatarURL, questions, answers}};
+    return newUser;
+}

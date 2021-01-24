@@ -153,6 +153,18 @@ let questions = {
             }
         }
     }
+
+    export function _saveUser (user) {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                users = {
+                    ...users, ...user
+                }
+
+                res(user);
+            }, 1000);
+        })
+    }
   
     export function _saveQuestion (question) {
         return new Promise((res, rej) => {
