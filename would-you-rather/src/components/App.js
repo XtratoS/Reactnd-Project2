@@ -5,7 +5,8 @@ import Home from './Home';
 import { handleInitialData } from '../actions/shared';
 import LoadingBar from 'react-redux-loading';
 import NavBar from './NavBar';
-import LoginPage from './LoginPage'
+import LoginPage from './LoginPage';
+import NewQuestion from './NewQuestion';
 
 export class App extends Component {
     componentDidMount() {
@@ -16,17 +17,18 @@ export class App extends Component {
         const { loaded, loggedInUser } = this.props
         return (
             <Router>
-                <LoadingBar style={{position: "fixed", zIndex: 5}} />
+                <LoadingBar style={{position: "fixed", zIndex: 999}} />
                 <NavBar />
-                {loaded && <div className="container">
-                    {loggedInUser &&
-                    (<Fragment>
+                {(loaded && <div className="container py-4">
+                    {(loggedInUser &&
+                    <Fragment>
                         <Route exact path="/" component={Home} />
+                        <Route exact path="/new" component={NewQuestion} />
                         {/* <Route exact path="/leaderboard" component={Leaderboard} /> */}
                     </Fragment>) ||
                         <LoginPage />
                     }
-                </div>}
+                </div>)}
             </Router>
         )
     }

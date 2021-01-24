@@ -29,7 +29,7 @@ export class Home extends Component {
         const notSelectedStyle = 'btn-outline-teal';
         const visibleQuestions = this.props[this.state.visibleSection];
         return (
-            <div className="text-center my-4 small-container">
+            <div className="text-center small-container">
                 <div className="m-1 p-1">
                     <button
                         className={`m-1 btn ${selected === 'unanswered' ? selectedStyle : notSelectedStyle}`}
@@ -47,14 +47,14 @@ export class Home extends Component {
                 <div
                     className={`fade ${this.state.show}`}
                 >
-                    {visibleQuestions.length > 0 && visibleQuestions.map((id) => {
+                    {(visibleQuestions.length > 0 && visibleQuestions.map((id) => {
                         return (
                             <MiniQuestion
                                 key={id}
                                 id={id}
                             />
                         )
-                    }) ||
+                    })) ||
                     <div className="mt-2 mb-4">No questions to show...</div>
                     }
                 </div>

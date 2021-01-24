@@ -9,7 +9,7 @@ export class NavBar extends Component {
             <nav className="navbar-light side-nav bg-dark text-danger">
                 <NavLink className="nav-link p-0" exact to="/" activeClassName="active">
                     <div className="side-nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
-                        <i className="fa fa-home fa-2x"></i>
+                        <i className="fa fa-home fa-15x"></i>
                     </div>
                 </NavLink>
                 <NavLink className="nav-link p-0" exact to="/new" activeClassName="active">
@@ -19,12 +19,12 @@ export class NavBar extends Component {
                         data-bs-placement="top"
                         title="Add New Question"
                     >
-                        <i className="fa fa-plus-square fa-2x"></i>
+                        <i className="fa fa-plus-square fa-15x"></i>
                     </div>
                 </NavLink>
                 <NavLink className="nav-link p-0" exact to="/leaderboard" activeClassName="active">
                     <div className="side-nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Leaderboard">
-                        <i className="fa fa-trophy fa-2x"></i>
+                        <i className="fa fa-trophy fa-15x"></i>
                     </div>
                 </NavLink>
                 {(this.props.loggedIn === true) &&
@@ -37,7 +37,7 @@ export class NavBar extends Component {
                             data-bs-placement="top"
                             title="Log Out"
                         >
-                            <i className="fa fa-sign-out-alt fa-2x"></i>
+                            <i className="fa fa-sign-out-alt fa-15x"></i>
                         </div>
                     </div>)
                 }

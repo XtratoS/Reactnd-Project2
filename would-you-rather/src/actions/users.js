@@ -1,6 +1,7 @@
 import { hideLoading, showLoading } from "react-redux-loading";
 import { saveUser } from "../utils/api";
 import { formatUser } from "../utils/helpers";
+import { setInitialized } from "./initialized";
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const ADD_USER = 'ADD_USER';
@@ -22,9 +23,11 @@ export function addUser(user) {
 export function handleAddUser(user) {
     const formattedUser = formatUser(user);
     return function(dispatch) {
+        dispatch(setInitialized(false));
         dispatch(showLoading());
         saveUser(formattedUser).then((addedUser) => {
             dispatch(addUser(addedUser));
+            dispatch(setInitialized(true));
             dispatch(hideLoading());
         });
     }

@@ -92,7 +92,7 @@ code {
     margin: 0;
     text-align: center;
     height: 100%;
-    width: 64px;
+    /* width: 64px; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -152,4 +152,8 @@ code {
 
 .logout-btn {
     cursor: pointer;
+}
+
+.fa-15x {
+    font-size: 1.5em;
 }
