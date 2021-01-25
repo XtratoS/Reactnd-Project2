@@ -54,7 +54,6 @@ export class LoginUser extends Component {
 
 function mapStateToProps(state) {
     const { users } = state;
-    console.log('users ', users)
     let loginUsers = [];
     let userIds = [];
     for (let userId in users) {
