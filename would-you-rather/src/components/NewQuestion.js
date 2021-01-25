@@ -21,13 +21,13 @@ export class NewQuestion extends Component {
         if (hint === '' || optionOne === '' || optionTwo === '') {
             this.setState({error: "Please fill in all the fields"});
         } else {
-            const { dispatch, loggedInUser } = this.props
+            const { dispatch, loggedInUser, history } = this.props
             dispatch(handleAddQuestion({
                 hint,
                 optionOneText: optionOne,
                 optionTwoText: optionTwo,
                 author: loggedInUser,
-            }));
+            }, ()=>{history.push("/");}));
         }
     }
 
@@ -37,7 +37,7 @@ export class NewQuestion extends Component {
             <div className="text-center my-4 small-container">
                 {error && (<div className="alert alert-danger p-1">{error}</div>)}
                 <div className="m-2">
-                    <div className="h4 m-3">Would you rather</div>
+                    <div className="h3 m-3">Would you rather</div>
                     <div className="input-group">
                         <textarea
                             name="optionOne"
