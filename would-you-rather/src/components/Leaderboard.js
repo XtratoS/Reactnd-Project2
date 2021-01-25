@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import LeaderboardRow from './LeaderboardRow'
 
 export class Leaderboard extends Component {
-    componentDidMount() {
-        console.log(this.props.users);
-    }
-
     render() {
         const { users } = this.props
         return (
