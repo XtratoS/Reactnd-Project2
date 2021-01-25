@@ -215,7 +215,7 @@ let questions = {
                     }
                 }
 
-                res()
+                res({ userId: authedUser, questionId: qid, answer })
             }, 500)
         })
     }
