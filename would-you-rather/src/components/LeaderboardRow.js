@@ -40,7 +40,7 @@ export class LeaderboardRow extends Component {
                         <div className="border rounded-top">
                             Points
                         </div>
-                        <div className="p-2">
+                        <div className="border rounded-bottom p-2">
                             <div className="rounded-circle m-auto square pts">
                                 {user.total}
                             </div>
