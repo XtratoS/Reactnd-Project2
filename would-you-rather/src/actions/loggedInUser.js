@@ -12,9 +12,11 @@ export function login(userId) {
 
 export function handleLogin(userId) {
     return (dispatch) => {
+        dispatch(setInitialized(false));
         dispatch(showLoading());
         setTimeout(() => {
             dispatch(login(userId));
+            dispatch(setInitialized(true));
             dispatch(hideLoading());
         }, 700);
     }

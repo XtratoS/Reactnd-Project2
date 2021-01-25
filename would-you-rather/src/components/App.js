@@ -18,7 +18,7 @@ export class App extends Component {
         const { loaded, loggedInUser } = this.props
         return (
             <Router>
-                <LoadingBar style={{position: "fixed", zIndex: 999}} />
+                <LoadingBar style={{position: "fixed", height: "5px", zIndex: 999}} />
                 <NavBar />
                 {(loaded && <div className="mx-128 py-4">
                     {(loggedInUser &&
