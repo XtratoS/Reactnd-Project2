@@ -25,11 +25,11 @@ export class Home extends Component {
     render() {
 
         const selected = this.state.visibleSection;
-        const selectedStyle = 'btn-teal';
-        const notSelectedStyle = 'btn-outline-teal';
+        const selectedStyle = 'btn-success';
+        const notSelectedStyle = 'btn-outline-success';
         const visibleQuestions = this.props[this.state.visibleSection];
         return (
-            <div className="text-center small-container">
+            <div className="text-center small-container my-4">
                 <div className="m-1 p-1">
                     <button
                         className={`m-1 btn ${selected === 'unanswered' ? selectedStyle : notSelectedStyle}`}
@@ -77,9 +77,13 @@ function mapStateToProps({loggedInUser, questions}) {
         }
     }
 
+    const sortQuestions = (a, b) => (
+        questions[b].timestamp - questions[a].timestamp
+    )
+
     return {
-        answered,
-        unanswered
+        answered: answered.sort(sortQuestions),
+        unanswered: unanswered.sort(sortQuestions)
     }
 }
 
