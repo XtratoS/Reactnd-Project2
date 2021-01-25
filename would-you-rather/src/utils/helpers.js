@@ -6,7 +6,7 @@ export function timestampToText(timestamp) {
     let minutes = D.getMinutes();
     minutes = minutes < 10 ? `0${minutes}` : minutes;
 
-    const exactDay = D.getDate();
+    const exactDay = D.getDate() < 10 ? `0${D.getDate()}` : D.getDate();
     const exactMonth = D.getMonth() < 10 ? `0${D.getMonth()}` : D.getMonth();
     const exactYear = D.getFullYear();
 
