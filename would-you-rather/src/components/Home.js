@@ -29,8 +29,8 @@ export class Home extends Component {
         const notSelectedStyle = 'btn-outline-success';
         const visibleQuestions = this.props[this.state.visibleSection];
         return (
-            <div className="text-center small-container my-4">
-                <div className="m-1 p-1">
+            <div className="text-center small-container my-4 p-2">
+                <div>
                     <button
                         className={`m-1 btn ${selected === 'unanswered' ? selectedStyle : notSelectedStyle}`}
                         onClick={() => {this.switchSection('unanswered')}}
