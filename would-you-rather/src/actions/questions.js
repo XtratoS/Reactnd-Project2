@@ -19,7 +19,7 @@ function addQuestion(question) {
     }
 }
 
-export function handleAddQuestion(question) {
+export function handleAddQuestion(question, callback) {
     return (dispatch) => {
         dispatch(setInitialized(false));
         dispatch(showLoading());
@@ -27,6 +27,7 @@ export function handleAddQuestion(question) {
             dispatch(addQuestion(savedQuestion));
             dispatch(setInitialized(true));
             dispatch(hideLoading());
+            callback();
         });
     }
 }
