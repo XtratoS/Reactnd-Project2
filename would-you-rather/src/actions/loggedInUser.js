@@ -1,4 +1,5 @@
 import { hideLoading, showLoading } from "react-redux-loading";
+import { setInitialized } from "./initialized";
 
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
