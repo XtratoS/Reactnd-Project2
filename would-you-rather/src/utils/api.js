@@ -1,4 +1,4 @@
-import { _getQuestions, _getUsers, _saveUser, _saveQuestion } from "./_DATA";
+import { _getQuestions, _getUsers, _saveUser, _saveQuestion, _saveQuestionAnswer } from "./_DATA";
 
 export async function getInitialData() {
     let usersPromise = _getUsers();
@@ -21,4 +21,14 @@ export async function saveUser(user) {
 export async function saveQuestion(question) {
     const savedQuestion = await _saveQuestion(question);
     return savedQuestion;
+}
+
+export async function saveAnswer(_answer) {
+    const { userId, questionId, answer } = _answer
+    const savedAnswer = await _saveQuestionAnswer({
+        authedUser: userId,
+        qid: questionId,
+        answer
+    });
+    return savedAnswer;
 }
