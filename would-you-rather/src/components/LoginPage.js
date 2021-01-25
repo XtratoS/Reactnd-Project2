@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import CreateUser from './CreateUser';
 import LoginUser from './LoginUser';
 
-export class LoginPage extends Component {
+class LoginPage extends Component {
     render() {
         return (
             <div className="text-center my-4 small-container">
@@ -17,4 +16,4 @@ export class LoginPage extends Component {
     }
 }
 
-export default connect()(LoginPage);
+export default LoginPage;
