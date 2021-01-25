@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 export class LeaderboardRow extends Component {
     render() {
         const { user } = this.props
-        console.log(this.props)
         return (
             <div className="row m-3 border border-secondary rounded">
                 <div className="col-3 p-2 border-end border-2 border-secondary">
