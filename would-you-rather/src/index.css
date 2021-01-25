@@ -22,7 +22,7 @@ code {
 }
 
 .small-container {
-    max-width: 480px;
+    width: 480px;
     margin: auto;
 
     border: 1px solid #6c757d;
@@ -30,15 +30,15 @@ code {
 }
 
 .question {
-    margin: .25rem;
-    padding: .25rem;
+    margin: 0.25rem;
+    padding: 0.25rem;
 
     background-color: var(--bs-light);
     /* color: #fff; */
 
     /* border: 1px solid #6c757d; */
     border: 1px solid var(--bs-dark);
-    border-radius: .25rem;
+    border-radius: 0.25rem;
 }
 
 /* .question-extradata, .hint {
@@ -49,7 +49,7 @@ code {
     gap: .25rem;
 } */
 
-.question-extradata {
+.question-extradata, .usercard-userinfo {
     border-right: 2px solid var(--bs-secondary);
 }
 
@@ -61,7 +61,7 @@ code {
 
 .date {
     /* color: #6c757d; */
-    font-size: .7rem;
+    font-size: 0.7rem;
 }
 
 .hint {
@@ -73,6 +73,16 @@ code {
 
 .hide {
     opacity: 0;
+}
+
+.square-64 {
+    height: 100px;
+    width: 100px;
+}
+
+.large-avatar-image {
+    width: 100%;
+    max-width: 100px;
 }
 
 .avatar-image {
@@ -115,7 +125,7 @@ code {
     position: absolute;
     left: 0;
     border-right: 8px solid var(--teal);
-    border-radius: .25rem;
+    border-radius: 0.25rem;
 }
 
 .nav-link.active {
@@ -156,4 +166,53 @@ code {
 
 .fa-15x {
     font-size: 1.5em;
+}
+
+.mx-128 {
+    margin: 0 128px;
+}
+
+.lb-table {
+    max-width: 80%;
+}
+
+.lb-row-mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    padding-left: 24px;
+    text-align: left;
+}
+
+.lb-row-end {
+    padding: 0.5em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    text-align: center;
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.pos {
+    font-size: 12px;
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    font-weight: bold;
+    position: absolute;
+}
+
+.pts {
+    background-color: var(--bs-success);
+    color: var(--bs-light);
+    text-shadow: 1px 1px 1px black;
 }
