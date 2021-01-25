@@ -7,6 +7,7 @@ import LoadingBar from 'react-redux-loading';
 import NavBar from './NavBar';
 import LoginPage from './LoginPage';
 import NewQuestion from './NewQuestion';
+import Leaderboard from './Leaderboard';
 
 export class App extends Component {
     componentDidMount() {
@@ -19,12 +20,12 @@ export class App extends Component {
             <Router>
                 <LoadingBar style={{position: "fixed", zIndex: 999}} />
                 <NavBar />
-                {(loaded && <div className="container py-4">
+                {(loaded && <div className="mx-128 py-4">
                     {(loggedInUser &&
                     <Fragment>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/new" component={NewQuestion} />
-                        {/* <Route exact path="/leaderboard" component={Leaderboard} /> */}
+                        <Route exact path="/leaderboard" component={Leaderboard} />
                     </Fragment>) ||
                         <LoginPage />
                     }
