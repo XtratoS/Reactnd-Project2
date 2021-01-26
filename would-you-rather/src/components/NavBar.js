@@ -6,13 +6,13 @@ import { logout } from '../actions/loggedInUser';
 export class NavBar extends Component {
     render() {
         return (
-            <nav className="navbar-light side-nav bg-dark text-danger">
-                <NavLink className="nav-link p-0" exact to="/" activeClassName="active">
+            <nav className="side-nav">
+                <NavLink className="nav-link" exact to="/" activeClassName="active">
                     <div className="side-nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
                         <i className="fa fa-home fa-15x"></i>
                     </div>
                 </NavLink>
-                <NavLink className="nav-link p-0" exact to="/new" activeClassName="active">
+                <NavLink className="nav-link" exact to="/new" activeClassName="active">
                     <div
                         className="side-nav-item"
                         data-bs-toggle="tooltip"
@@ -22,13 +22,13 @@ export class NavBar extends Component {
                         <i className="fa fa-plus-square fa-15x"></i>
                     </div>
                 </NavLink>
-                <NavLink className="nav-link p-0" exact to="/leaderboard" activeClassName="active">
+                <NavLink className="nav-link" exact to="/leaderboard" activeClassName="active">
                     <div className="side-nav-item" data-bs-toggle="tooltip" data-bs-placement="top" title="Leaderboard">
                         <i className="fa fa-trophy fa-15x"></i>
                     </div>
                 </NavLink>
                 {(this.props.loggedIn === true) &&
-                    (<div className="nav-link p-0 logout-btn"
+                    (<div className="nav-link logout-btn"
                         onClick={(e) => {this.props.dispatch(logout())}}
                     >
                         <div

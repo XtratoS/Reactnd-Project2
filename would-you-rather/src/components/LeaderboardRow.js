@@ -4,15 +4,15 @@ export class LeaderboardRow extends Component {
     render() {
         const { user } = this.props
         return (
-            <div className="row m-3 border border-secondary rounded">
-                <div className="col-3 p-2 border-end border-2 border-secondary">
+            <div className="lb-row">
+                <div className="lb-row-start">
                     <div className="pos">
                         #{user.pos}
                     </div>
                     <img
                         src={user.avatarURL}
                         alt="avatar"
-                        className="large-avatar-image m-auto"
+                        className="large-avatar-image"
                     />
                 </div>
                 <div className="col-6 lb-row-mid border-end border-2 border-secondary">

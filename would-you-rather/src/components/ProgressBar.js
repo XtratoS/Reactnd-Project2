@@ -4,7 +4,7 @@ function ProgressBar(props) {
     const { progress } = props;
     return (
         <div
-            className="progress m-1"
+            className="progress mt-2"
             style={{
                 height: '1.5rem'
             }}
@@ -14,7 +14,8 @@ function ProgressBar(props) {
                 role="progressbar"
                 style={{
                     height: '100%',
-                    width: `${progress}%`
+                    width: `${progress}%`,
+                    fontWeight: 'bold'
                 }}
                 aria-valuenow={progress}
                 aria-valuemin="0"

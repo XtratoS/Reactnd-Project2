@@ -26,13 +26,12 @@ class Question extends Component {
         const { selectedOption } = this.state;
         const optionOneVotes = question.optionOne.votes.length;
         const optionTwoVotes = question.optionTwo.votes.length;
-        const optionOneVotesPercentage = Math.round( (optionOneVotes / (optionOneVotes + optionTwoVotes)) * 100);
-        const optionTwoVotesPercentage = Math.round( (optionTwoVotes / (optionOneVotes + optionTwoVotes)) * 100);
+        const optionOneVotesPercentage = Math.round( (optionOneVotes / (optionOneVotes + optionTwoVotes)) * 1000) / 10;
+        const optionTwoVotesPercentage = Math.round( (optionTwoVotes / (optionOneVotes + optionTwoVotes)) * 1000) / 10;
         if (question) {
             return (
-                <div className="row g-0 text-center my-4 p-3 small-container">
-                    <div className="col-4 border-end border-2 pe-3 d-flex flex-column justify-content-between">
-                        <div className="border border-2 rounded-top">Author</div>
+                <div className="row g-0 text-center p-2 small-container">
+                    <div className="question-full-start">
                         <div className="author fw-bold">{author.name}</div>
                         <div className="text-center"><img src={author.avatarURL} alt="avatar" className="large-avatar-image" /></div>
                         <div className="date">{timestampToText(question.timestamp)}</div>
@@ -40,27 +39,21 @@ class Question extends Component {
                     <div className="col-1"></div>
                     <div className="col-7">
                         {answer ? <Fragment>
-                            <div className="h4 mb-2">Result:</div>
+                            <div className="h5 mb-3">Result:</div>
                             <div className="row g-0 mt-2">
                                 <div className={"mb-2 col-12 answered-question-answer " + (answer === "optionOne" ? "answer-selected-light" : "")}>
-                                    <div>{question.optionOne.text}</div>
-                                    <div className="row g-0 m-0">
-                                        <div className="col-8 ps-4 text-start">Votes:</div>
-                                        <div className="col-4 m-0 ps-2">{question.optionOne.votes.length}</div>
-                                    </div>
+                                    <div className="text-start">{question.optionOne.text}</div>
                                     <ProgressBar progress={optionOneVotesPercentage}/>
+                                    <div className="small"> {optionOneVotes} vote{optionOneVotes === 1 || 's'} </div>
                                 </div>
                                 <div className={"col-12 answered-question-answer " + (answer === "optionTwo" ? "answer-selected-light" : "")}>
-                                    <div>{question.optionTwo.text}</div>
-                                    <div className="row g-0 m-0">
-                                        <div className="col-8 ps-4 text-start">Votes:</div>
-                                        <div className="col-4 m-0 ps-2">{question.optionTwo.votes.length}</div>
-                                    </div>
+                                    <div className="text-start">{question.optionTwo.text}</div>
                                     <ProgressBar progress={optionTwoVotesPercentage}/>
+                                    <div className="small"> {optionTwoVotes} vote{optionTwoVotes === 1 || 's'} </div>
                                 </div>
                             </div>
                         </Fragment> : <Fragment>
-                            <div className="h4 mb-2">Would You Rather...</div>
+                            <div className="h5 mb-3">Would You Rather...</div>
                             <div className="row g-0 mt-2">
                                 <div onClick={() => {this.selectOption("optionOne")}} className={"col-12 unanswered-question-answer p-2" + (selectedOption === "optionOne" ? " answer-selected" : "")}>{question.optionOne.text}</div>
                                 <div className="my-2">OR</div>

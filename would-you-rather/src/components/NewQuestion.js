@@ -34,10 +34,10 @@ export class NewQuestion extends Component {
     render() {
         const { error, hint, optionOne, optionTwo } = this.state;
         return (
-            <div className="text-center my-4 small-container">
+            <div className="text-center small-container">
                 {error && (<div className="alert alert-danger p-1">{error}</div>)}
                 <div className="m-2">
-                    <div className="h3 m-3">Would you rather</div>
+                    <div className="h5 m-0 p-3">Would you rather...</div>
                     <div className="input-group">
                         <textarea
                             name="optionOne"
