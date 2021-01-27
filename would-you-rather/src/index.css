@@ -347,3 +347,9 @@ a, a:hover, a:visited {
 .nav-link-success:hover {
     filter: brightness(85%);
 }
+
+.logged-in-info {
+    position: absolute;
+    top: 0px;
+    left: 64px;
+}

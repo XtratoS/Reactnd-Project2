@@ -29,6 +29,7 @@ class NavBar extends Component {
         return (
             <Fragment>
             <div className="sidebar-name-label" style={{
+                position: 'fixed',
                 opacity: this.state.nameHidden ? 0 : 1,
                 visibility: this.state.nameHidden ? 'hidden' : 'visible'
             }}>{loggedInUser ? loggedInUser.name : "Not logged in"}</div>
@@ -38,7 +39,7 @@ class NavBar extends Component {
                     onMouseLeave={this.hideName}
                 >
                     {loggedInUser ? <img
-                        className="side-nav-item"
+                        className="side-nav-item side-nav-img"
                         src={loggedInUser.avatarURL}
                         alt={loggedInUser.id}
                     /> : <div className="side-nav-item dummy"></div>}
@@ -77,7 +78,12 @@ class NavBar extends Component {
                         </div>
                     </div>)
                 }
-            </nav></Fragment>
+            </nav>
+            {loggedInUser && 
+            <div className="logged-in-info">
+                <span className="text-secondary">Logged in as</span> {loggedInUser.name}</div>
+            }
+            </Fragment>
         )
     }
 }
