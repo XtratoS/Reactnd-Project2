@@ -4,8 +4,9 @@
 
 ## Running:
 - Required npm to be installed on the system
-- Install dependancies by running `npm install`
-- Start by running `npm start`
+1. cd into the project directory
+2. Install dependancies by running `npm install`
+3. Start by running `npm start`
 
 ## Additional Features & Changes:
 - Added a "hint" (Optional) to every question, it gives a hint as to what the question is about without revealing the whole question, useful for showing the question in the home page.
