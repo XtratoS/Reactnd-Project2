@@ -14,7 +14,7 @@ let users = {
     tylermcginnis: {
         id: 'tylermcginnis',
         name: 'Tyler McGinnis',
-        avatarURL: 'https://media.discordapp.net/attachments/560625691985575947/802008740160077864/avatar.webp',
+        avatarURL: 'https://images-ext-2.discordapp.net/external/ZHy6j3d-FYC3u48t_F9syEE0DFh3pewPFhsxm1wSkhU/%3Fauto%3Dwebp%26s%3D38648ef0dc2c3fce76d5e1d8639234d8da0152b2/https/external-preview.redd.it/iDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png',
         answers: {
             "vthrdm985a262al8qx3do": 'optionOne',
             "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
     johndoe: {
         id: 'johndoe',
         name: 'John Doe',
-        avatarURL: 'https://media.discordapp.net/attachments/560625691985575947/802008740160077864/avatar.webp',
+        avatarURL: 'https://cdn.discordapp.com/attachments/560625691985575947/804029749047459861/unknown.png',
         answers: {
             "xj352vofupe1dqz9emx13r": 'optionOne',
             "vthrdm985a262al8qx3do": 'optionTwo',
@@ -37,7 +37,7 @@ let users = {
 let questions = {
     "8xf0y6ziyjabvozdd253nd": {
         id: '8xf0y6ziyjabvozdd253nd',
-        hint: 'memorymemorymemorymemorymemorymemorymemorymemorymemorymemorymemorymemorymemorymemorymemorymemory',
+        hint: 'this is a memory related question',
         author: 'sarahedo',
         timestamp: 1467166872634,
         optionOne: {

@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import LeaderboardRow from './LeaderboardRow'
 
-export class Leaderboard extends Component {
+class Leaderboard extends Component {
     render() {
         const { users } = this.props
         return (
             <div className="small-container">
                 <div className="m-2">
-                    <div className="h3 m-0 p-3 text-center">Leaderboard</div>
+                    <div className="h5 m-0 p-3 text-center">Leaderboard</div>
                     {users.map((user) => (
                         <LeaderboardRow
                             key={user.id}

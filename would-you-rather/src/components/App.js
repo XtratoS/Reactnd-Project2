@@ -10,7 +10,7 @@ import NewQuestion from './NewQuestion';
 import Leaderboard from './Leaderboard';
 import Question from './Question';
 
-export class App extends Component {
+class App extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData());
     }

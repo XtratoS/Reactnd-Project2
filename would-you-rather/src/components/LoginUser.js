@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { handleLogin } from '../actions/loggedInUser';
 import UserLabelOption from './UserLabelOption';
 
-export class LoginUser extends Component {
+class LoginUser extends Component {
     state = {
         selectedId: null,
         loginError: null,

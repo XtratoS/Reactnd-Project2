@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import MiniQuestion from './MiniQuestion'
 
-export class QuestionsList extends Component {
+class QuestionsList extends Component {
     render() {
         return (
             <Fragment>

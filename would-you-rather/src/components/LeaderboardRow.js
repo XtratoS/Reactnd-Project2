@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class LeaderboardRow extends Component {
+class LeaderboardRow extends Component {
     render() {
         const { user } = this.props
         return (
@@ -16,7 +16,7 @@ export class LeaderboardRow extends Component {
                     />
                 </div>
                 <div className="col-6 lb-row-mid border-end border-2 border-secondary">
-                    <div className="fw-bold h5 m-0 mt-1">{user.name}</div>
+                    <div className="fw-bold m-0 mt-1">{user.name}</div>
                     <div className="row m-0">
                         <div className="col-8 m-0 p-0 text-start">
                             Asked:

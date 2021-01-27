@@ -28,8 +28,8 @@ function addAnswer(answer) {
 
 export function handleAddAnswer(answer) {
     return function(dispatch) {
-        dispatch(setInitialized(false));
         dispatch(showLoading());
+        dispatch(setInitialized(false));
         saveAnswer(answer).then((savedAnswer) => {
             dispatch(addAnswer(savedAnswer));
             dispatch(setInitialized(true));

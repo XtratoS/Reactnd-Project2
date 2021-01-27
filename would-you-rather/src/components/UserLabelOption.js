@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class UserLabelOption extends Component {
+class UserLabelOption extends Component {
     render() {
         const { user } = this.props
         return (

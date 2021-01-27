@@ -2,61 +2,44 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MiniQuestion from './MiniQuestion';
 
-export class Home extends Component {
-    state = {
-        show: 'show',
-        visibleSection: 'unanswered'
-    }
-
-    switchSection(section) {
-        if (section !== this.state.visibleSection) {
-            this.setState({show: ''}, () => {
-                setTimeout(() => {
-                    this.setState({visibleSection: section}, () => {
-                        setTimeout(() => {
-                            this.setState({show: 'show'});
-                        }, 150);
-                    });
-                }, 150);
-            });
-        }
-    }
-
+class Home extends Component {
     render() {
-
-        const selected = this.state.visibleSection;
-        const selectedStyle = 'btn-success';
-        const notSelectedStyle = 'btn-outline-success';
-        const visibleQuestions = this.props[this.state.visibleSection];
+        const { answered, unanswered } = this.props
         return (
             <div className="text-center small-container p-2">
-                <div>
-                    <button
-                        className={`m-1 btn ${selected === 'unanswered' ? selectedStyle : notSelectedStyle}`}
-                        onClick={() => {this.switchSection('unanswered')}}
-                    >
-                        Unanswered
-                    </button>
-                    <button
-                        className={`m-1 btn ${selected === 'answered' ? selectedStyle : notSelectedStyle}`}
-                        onClick={() => {this.switchSection('answered')}}
-                    >
-                        Answered
-                    </button>
-                </div>
-                <div
-                    className={`fade ${this.state.show}`}
-                >
-                    {(visibleQuestions.length > 0 && visibleQuestions.map((id) => {
-                        return (
-                            <MiniQuestion
-                                key={id}
-                                id={id}
-                            />
-                        )
-                    })) ||
-                    <div className="mt-2 mb-4">No questions to show...</div>
-                    }
+                <ul className="nav nav-pills nav-questions" id="questions" role="tablist">
+                    <li className="nav-item col-4 me-1" role="presentation">
+                        <a className="nav-link-success active" id="unanswered-tab" data-bs-toggle="tab" href="#unanswered" role="tab" aria-controls="unanswered" aria-selected="true">Unanswered</a>
+                    </li>
+                    <li className="nav-item col-4 ms-1" role="presentation">
+                        <a className="nav-link-success" id="answered-tab" data-bs-toggle="tab" href="#answered" role="tab" aria-controls="answered" aria-selected="false">Answered</a>
+                    </li>
+                </ul>
+                <div className="tab-content" id="questionsContent">
+                    <div className="tab-pane fade show active" id="unanswered" role="tabpanel" aria-labelledby="unanswered-tab">
+                        {(unanswered.length > 0 && unanswered.map((id) => {
+                            return (
+                                <MiniQuestion
+                                    key={id}
+                                    id={id}
+                                />
+                            )
+                        })) ||
+                        <div className="m-4">No questions to show...</div>
+                        }
+                    </div>
+                    <div className="tab-pane fade" id="answered" role="tabpanel" aria-labelledby="answered-tab">
+                        {(answered.length > 0 && answered.map((id) => {
+                            return (
+                                <MiniQuestion
+                                    key={id}
+                                    id={id}
+                                />
+                            )
+                        })) ||
+                        <div className="mt-2 mb-4">No questions to show...</div>
+                        }
+                    </div>
                 </div>
             </div>
         )

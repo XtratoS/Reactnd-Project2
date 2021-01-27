@@ -7,7 +7,7 @@ class MiniQuestion extends Component {
     render() {
         const { question, author } = this.props;
         return (
-            <Link to={`questions/${question.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to={`questions/${question.id}`}>
                 <div className="question row m-2 p-0">
                     <div className="col-5 m-auto question-extradata">
                         <div className="author">{author.name}</div>

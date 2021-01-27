@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { handleAddUser } from '../actions/users';
 
-export class CreateUser extends Component {
+class CreateUser extends Component {
     state = {
         registerationError: null,
         newUserId: '',

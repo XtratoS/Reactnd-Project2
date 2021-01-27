@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { handleAddQuestion } from '../actions/questions';
 
-export class NewQuestion extends Component {
+class NewQuestion extends Component {
     state = {
         error: null,
         text: '',
