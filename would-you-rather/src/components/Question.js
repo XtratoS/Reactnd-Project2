@@ -25,7 +25,7 @@ class Question extends Component {
         } else {
             return (
                 <div className="row g-0 text-center my-4 p-3 small-container">
-                    <div className="my-4">Question not found...</div>
+                    <div className="my-4">404, Question not found...</div>
                 </div>
             )
         }
