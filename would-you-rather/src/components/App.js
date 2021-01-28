@@ -25,7 +25,7 @@ class App extends Component {
                     {(loggedInUser &&
                     <Fragment>
                         <Route exact path="/" component={Home} />
-                        <Route exact path="/new" component={NewQuestion} />
+                        <Route exact path="/add" component={NewQuestion} />
                         <Route exact path="/leaderboard" component={Leaderboard} />
                         <Route exact path="/questions/:id" component={Question} />
                     </Fragment>) ||
