@@ -1,19 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class UserLabelOption extends Component {
-    render() {
-        const { user } = this.props
-        return (
-            <div className="text-start">
-                <img
-                    className="small-avatar-image"
-                    src={user.avatarURL}
-                    alt={user.name}
-                />
-                <span className="ms-2">{user.name}</span>
-            </div>
-        )
-    }
-}
+const UserLabelOption = ({ user }) => (
+    <div className="text-start">
+        <img
+            className="small-avatar-image"
+            src={user.avatarURL}
+            alt={user.name}
+        />
+        <span className="ms-2">{user.name}</span>
+    </div>
+)
 
-export default UserLabelOption
+export default UserLabelOption;
