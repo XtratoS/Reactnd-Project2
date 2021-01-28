@@ -49,7 +49,7 @@ class NavBar extends Component {
                         <i className="fa fa-home fa-15x"></i>
                     </div>
                 </NavLink>
-                <NavLink className="sidebar-nav-link nav-link" exact to="/new" activeClassName="active">
+                <NavLink className="sidebar-nav-link nav-link" exact to="/add" activeClassName="active">
                     <div
                         className="side-nav-item"
                         data-bs-toggle="tooltip"
