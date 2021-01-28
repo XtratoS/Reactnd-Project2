@@ -16,7 +16,7 @@ export function users(state = {}, action) {
                     ...state[author],
                     questions: state[author].questions.concat([id])
                 }
-        }
+            }
         case ADD_ANSWER:
             const { userId, questionId, answer } = action.answer
             return {
